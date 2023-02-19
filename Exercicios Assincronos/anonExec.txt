@@ -1,0 +1,11 @@
+OpportunityBO.criarContratoSched();
+ContactBO.callSchedForCtctCaseBatch();
+
+String CRON = '0 0 22 * * ?';
+Schedule the test job
+String jobId = System.schedule('Vincula cases sem contato com o contato criado + novo', 
+											CRON, new ContactsCaseCallBatchSched());
+String jobId2 = System.schedule('Criar Contratos para Opportunities', 
+											CRON, new OpportunityCaseWonSchee());
+
+OpportunityBO.oppComDataFechQueable();
